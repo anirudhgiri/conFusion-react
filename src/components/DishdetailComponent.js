@@ -35,8 +35,8 @@ class DishDetail extends Component{
             let commentsDiv = comments.map(comment => {
                 return(
                     <div key={comment.id}>
-                        <p>{comment.comment}</p>
-                        <p>--{comment.author}, <span>{new Date(comment.date).toLocaleDateString("en-US")}</span> </p>
+                        <li>{comment.comment}</li>
+                        <li>--{comment.author}, <span>{new Intl.DateTimeFormat("en-US",{year:"numeric", month: "short", day: "2-digit"}).format(new Date(Date.parse(comment.date)))}</span> </li>
                     </div>
                 );
             })
@@ -44,7 +44,9 @@ class DishDetail extends Component{
             return (
                 <div className = "col-12 col-md-5 m-1">
                     <h4>Comments</h4>
-                    {commentsDiv}
+                    <ul className="list-unstyled">
+                        {commentsDiv}
+                    </ul>
                 </div>
             );
         }
@@ -64,9 +66,11 @@ class DishDetail extends Component{
         if(dish != null)
             comments = dish.comments;
         return(
-                <div className = "row">
-                    {this.renderDish(dish)}
-                    {this.renderComments(comments)}
+                <div className = "container">
+                    <div className = "row">
+                        {this.renderDish(dish)}
+                        {this.renderComments(comments)}
+                    </div>
                 </div>
         )
     }
