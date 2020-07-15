@@ -4,7 +4,6 @@ import { Card, CardImg, CardText, CardBody,
 import { Loading } from './LoadingComponent';
 
 function RenderCard({item, isLoading, errMess}) {
-    console.log("isLoading "+isLoading)
     if(isLoading){
         return(
             <Loading/>
