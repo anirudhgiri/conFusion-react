@@ -39,8 +39,6 @@ class Main extends Component{
     this.props.fetchDishes();
     this.props.fetchComments();
     this.props.fetchPromos();
-    console.log("props");
-    console.log(this.props);
   }
 
   render(){

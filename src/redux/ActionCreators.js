@@ -87,9 +87,10 @@ export const fetchPromos = () => (dispatch) => {
 
     return fetch(baseUrl + 'promotions')
     .then(response => {
-        if (response.ok) {
+        if (response.ok) 
           return response;
-        } else {
+         
+        else {
           var error = new Error('Error ' + response.status + ': ' + response.statusText);
           error.response = response;
           throw error;
