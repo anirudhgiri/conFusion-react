@@ -1,6 +1,4 @@
 import * as ActionTypes from './ActionTypes';
-import { actionTypes } from 'react-redux-form';
-
 
 export const Dishes = (state = {isLoading:true, errMess:null, dishes: []}, action) =>{
     switch(action.type){

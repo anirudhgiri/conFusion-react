@@ -168,9 +168,6 @@ const minLength = (len) => (val) => val && (val.length >= len);
 
 
     const DishDetail = (props) => {
-        let dish = props.dish;
-        let comments = null;
-
         if(props.isLoading){
             return(
                 <div className="container">
@@ -191,7 +188,7 @@ const minLength = (len) => (val) => val && (val.length >= len);
             );
         }
 
-        else if(dish != null)
+        else if(props.dish != null)
         return(
             <div className="container">
                 <div className="row">

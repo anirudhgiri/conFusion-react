@@ -7,7 +7,7 @@ import Home from './HomeComponent.js';
 import Contact from './ContactComponent.js';
 import {Switch, Route, Redirect, withRouter} from 'react-router-dom';
 import About from './AboutComponent.js';
-import {Connect, connect} from 'react-redux';
+import {connect} from 'react-redux';
 import  {postComment, fetchDishes, fetchComments, fetchPromos, fetchLeaders, postFeedback} from '../redux/ActionCreators';
 import {actions} from 'react-redux-form';
 
@@ -34,10 +34,6 @@ const mapDispatchToProps = dispatch => ({
 
 
 class Main extends Component{
-
-  constructor(props){
-    super(props);
-  }
 
   componentDidMount(){
     this.props.fetchDishes();
